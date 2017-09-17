@@ -1,14 +1,15 @@
 <?xml version="1.0"?>
 <Container version="2">
   <Name>aria2webui</Name>
-  <Beta>True</Beta>
   <Repository>fanningert/aria2-with-webui</Repository>
   <Registry>https://registry.hub.docker.com/u/fanningert/aria2-with-webui/</Registry>
   <Network>bridge</Network>
   <Privileged>false</Privileged>
-  <Date>2017-09-13</Date>
+  <Date>2017-09-17</Date>
   <Changes>
 [center][font size=4]Aria2WebUI Change Log[/font][/center]
+[font size=3]2017.09.17[/font]
+- Removed BETA flag
 [font size=3]2017.09.13[/font]
 - Update template xml
 [font size=3]2017.09.10[/font]

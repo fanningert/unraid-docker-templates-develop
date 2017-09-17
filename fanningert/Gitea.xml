@@ -3,7 +3,7 @@
   <Name>Gitea</Name>
   <Beta>True</Beta>
   <Repository>fanningert/gitea</Repository>
-  <Registry>https://registry.hub.docker.com/u/fanningert/gitea/</Registry>
+  <Registry>https://registry.hub.docker.com/u/fanningert/docker-gitea/</Registry>
   <Network>bridge</Network>
   <Privileged>false</Privileged>
   <Date>2017-09-13</Date>
