@@ -2,13 +2,15 @@
 <Container version="2">
   <Name>Gitea</Name>
   <Beta>True</Beta>
-  <Repository>fanningert/gitea</Repository>
-  <Registry>https://registry.hub.docker.com/u/fanningert/docker-gitea/</Registry>
+  <Repository>gitea/gitea</Repository>
+  <Registry>https://registry.hub.docker.com/u/gitea/gitea/</Registry>
   <Network>bridge</Network>
   <Privileged>false</Privileged>
-  <Date>2017-09-13</Date>
+  <Date>2017-09-17</Date>
   <Changes>
 [center][font size=4]Gitea Change Log[/font][/center]
+[font size=3]2017.09.17[/font]
+- changed docker source to the offical repository
 [font size=3]2017.09.15[/font]
 - Initial Release
   </Changes>
