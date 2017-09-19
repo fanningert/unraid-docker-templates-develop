@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>Cloud Commander:latest-alpine</Name>
+  <Beta>True</Beta>
+  <Repository>coderaiser/cloudcmd</Repository>
+  <Registry>https://registry.hub.docker.com/u/coderaiser/cloudcmd/</Registry>
+  <Network>bridge</Network>
+  <Privileged>false</Privileged>
+  <Date>2017-09-19</Date>
+  <Changes>
+[center][font size=4]Cloud Commander Change Log[/font][/center]
+[font size=3]2017.09.19[/font]
+- Initial Release
+  </Changes>
+  <Support></Support>
+  <Overview>Cloud Commander is an orthodox web file manager with console and editor.</Overview>
+  <Category>Tools:</Category>
+  <WebUI></WebUI>
+  <TemplateURL/>
+  <Icon>https://raw.githubusercontent.com/fanningert/unraid-docker-templates/master/fanningert/icons/cloudcmd.png</Icon>
+  <ExtraParams/>
+  <Description>Cloud Commander is an orthodox web file manager with console and editor.</Description>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>8000</HostPort>
+        <ContainerPort>8000</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/gitea</HostDir>
+      <ContainerDir>/data</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment/>
+  <Config Name="WebUI port" Target="8000" Default="8000" Mode="tcp" Description="Container Port: 4822" Type="Port" Display="always" Required="true" Mask="false">8000</Config>
+</Container>

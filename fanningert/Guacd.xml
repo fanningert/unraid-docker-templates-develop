@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>Guacamole - guacd</Name>
+  <Beta>True</Beta>
+  <Repository>guacamole/guacd</Repository>
+  <Registry>https://registry.hub.docker.com/u/guacamole/guacd/</Registry>
+  <Network>bridge</Network>
+  <Privileged>false</Privileged>
+  <Date>2017-09-19</Date>
+  <Changes>
+[center][font size=4]Guacamole Change Log[/font][/center]
+[font size=3]2017.09.19[/font]
+- Initial Release
+  </Changes>
+  <Support></Support>
+  <Overview>Provides the guacd daemon, built from the released guacamole-server source with support for VNC, RDP, SSH, and telnet.</Overview>
+  <Category>Network:Mangament Network:Other</Category>
+  <WebUI/>
+  <TemplateURL/>
+  <Icon>https://raw.githubusercontent.com/fanningert/unraid-docker-templates/master/fanningert/icons/guacd.png</Icon>
+  <ExtraParams/>
+  <Description>Provides the guacd daemon, built from the released guacamole-server source with support for VNC, RDP, SSH, and telnet.</Description>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>4822</HostPort>
+        <ContainerPort>4822</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Environment/>
+  <Config Name="GUACD port" Target="4822" Default="4822" Mode="tcp" Description="Container Port: 4822" Type="Port" Display="always" Required="true" Mask="false">4822</Config>
+</Container>
