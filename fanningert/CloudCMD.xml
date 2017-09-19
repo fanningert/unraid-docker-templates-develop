@@ -15,7 +15,7 @@
   <Support></Support>
   <Overview>Cloud Commander is an orthodox web file manager with console and editor.</Overview>
   <Category>Tools:</Category>
-  <WebUI></WebUI>
+  <WebUI>http://[IP]:[PORT:8000]</WebUI>
   <TemplateURL/>
   <Icon>https://raw.githubusercontent.com/fanningert/unraid-docker-templates/master/fanningert/icons/cloudcmd.png</Icon>
   <ExtraParams/>
