@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <Container version="2">
-  <Name>Cloud Commander:latest-alpine</Name>
+  <Name>Cloud Commander</Name>
   <Beta>True</Beta>
-  <Repository>coderaiser/cloudcmd</Repository>
+  <Repository>coderaiser/cloudcmd:latest-alpine</Repository>
   <Registry>https://registry.hub.docker.com/u/coderaiser/cloudcmd/</Registry>
   <Network>bridge</Network>
   <Privileged>false</Privileged>
@@ -38,5 +38,5 @@
     </Volume>
   </Data>
   <Environment/>
-  <Config Name="WebUI port" Target="8000" Default="8000" Mode="tcp" Description="Container Port: 4822" Type="Port" Display="always" Required="true" Mask="false">8000</Config>
+  <Config Name="WebUI port" Target="8000" Default="8000" Mode="tcp" Description="Container Port: 8000" Type="Port" Display="always" Required="true" Mask="false">8000</Config>
 </Container>
