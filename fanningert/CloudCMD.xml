@@ -12,7 +12,7 @@
 [font size=3]2017.09.19[/font]
 - Initial Release
   </Changes>
-  <Support></Support>
+  <Support>https://forums.lime-technology.com/topic/60258-support-cloud-commander/</Support>
   <Overview>Cloud Commander is an orthodox web file manager with console and editor.</Overview>
   <Category>Tools:</Category>
   <WebUI>http://[IP]:[PORT:8000]</WebUI>
@@ -40,17 +40,23 @@
   <Environment>
     <Variable>
       <Value>false</Value>
-      <Name>cloudcmd_terminal</Name>
+      <Name>CLOUDCMD_CONSOLE</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>false</Value>
+      <Name>CLOUDCMD_TERMINAL</Name>
       <Mode/>
     </Variable>
     <Variable>
       <Value>gritty</Value>
-      <Name>cloudcmd_terminal_path</Name>
+      <Name>CLOUDCMD_TERMINAL_PATH</Name>
       <Mode/>
     </Variable>
   </Environment>
   <Config Name="WebUI port" Target="8000" Default="8000" Mode="tcp" Description="Container Port: 8000" Type="Port" Display="always" Required="true" Mask="false">8000</Config>
   <Config Name="Mount Root Path" Target="/mnt/fs" Default="/mnt/" Mode="rw" Description="Container Path: /mnt/fs" Type="Path" Display="always" Required="true" Mask="false"/>
-  <Config Name="Terminal active" Target="cloudcmd_terminal" Default="false" Mode="" Description="Terminal active" Type="Variable" Display="advanced" Required="true" Mask="false"/>
-  <Config Name="Terminal path" Target="cloudcmd_terminal_path" Default="gritty" Mode="" Description="Terminal path" Type="Variable" Display="advanced" Required="true" Mask="false"/>
+  <Config Name="Enable console" Target="CLOUDCMD_CONSOLE" Default="false" Mode="" Description="enable console" Type="Variable" Display="advanced" Required="true" Mask="false"/>
+  <Config Name="Enable terminal" Target="CLOUDCMD_TERMINAL" Default="false" Mode="" Description="enable terminal" Type="Variable" Display="advanced" Required="true" Mask="false"/>
+  <Config Name="Terminal path" Target="CLOUDCMD_TERMINAL_PATH" Default="gritty" Mode="" Description="set terminal path" Type="Variable" Display="advanced" Required="true" Mask="false"/>
 </Container>
