@@ -32,11 +32,25 @@
   </Networking>
   <Data>
     <Volume>
-      <HostDir></HostDir>
+      <HostDir>/mnt/</HostDir>
       <ContainerDir>/mnt/fs</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
   </Data>
+  <Environment>
+    <Variable>
+      <Value>false</Value>
+      <Name>cloudcmd_terminal</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>gritty</Value>
+      <Name>cloudcmd_terminal_path</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
   <Config Name="WebUI port" Target="8000" Default="8000" Mode="tcp" Description="Container Port: 8000" Type="Port" Display="always" Required="true" Mask="false">8000</Config>
-  <Config Name="Mount Root Path" Target="/mnt/fs" Default="" Mode="rw" Description="Container Path: /mnt/fs" Type="Path" Display="always" Required="true" Mask="false"/>
+  <Config Name="Mount Root Path" Target="/mnt/fs" Default="/mnt/" Mode="rw" Description="Container Path: /mnt/fs" Type="Path" Display="always" Required="true" Mask="false"/>
+  <Config Name="Terminal active" Target="cloudcmd_terminal" Default="false" Mode="" Description="Terminal active" Type="Variable" Display="advanced" Required="true" Mask="false"/>
+  <Config Name="Terminal path" Target="cloudcmd_terminal_path" Default="gritty" Mode="" Description="Terminal path" Type="Variable" Display="advanced" Required="true" Mask="false"/>
 </Container>
