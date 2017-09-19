@@ -32,11 +32,11 @@
   </Networking>
   <Data>
     <Volume>
-      <HostDir>/mnt/user/appdata/gitea</HostDir>
-      <ContainerDir>/data</ContainerDir>
+      <HostDir></HostDir>
+      <ContainerDir>/mnt/fs</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
   </Data>
-  <Environment/>
   <Config Name="WebUI port" Target="8000" Default="8000" Mode="tcp" Description="Container Port: 8000" Type="Port" Display="always" Required="true" Mask="false">8000</Config>
+  <Config Name="Mount Root Path" Target="/mnt/fs" Default="" Mode="rw" Description="Container Path: /mnt/fs" Type="Path" Display="always" Required="true" Mask="false"/>
 </Container>
