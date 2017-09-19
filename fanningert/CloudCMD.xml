@@ -39,24 +39,30 @@
   </Data>
   <Environment>
     <Variable>
+      <Value>/mnt/fs</Value>
+      <Name>CLOUDCMD_ROOT</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
       <Value>false</Value>
       <Name>CLOUDCMD_CONSOLE</Name>
       <Mode/>
     </Variable>
     <Variable>
       <Value>false</Value>
-      <Name>CLOUDCMD_TERMINAL</Name>
+      <Name>cloudcmd_terminal</Name>
       <Mode/>
     </Variable>
     <Variable>
       <Value>gritty</Value>
-      <Name>CLOUDCMD_TERMINAL_PATH</Name>
+      <Name>cloudcmd_terminal_path</Name>
       <Mode/>
     </Variable>
   </Environment>
   <Config Name="WebUI port" Target="8000" Default="8000" Mode="tcp" Description="Container Port: 8000" Type="Port" Display="always" Required="true" Mask="false">8000</Config>
   <Config Name="Mount Root Path" Target="/mnt/fs" Default="/mnt/" Mode="rw" Description="Container Path: /mnt/fs" Type="Path" Display="always" Required="true" Mask="false"/>
+  <Config Name="Root directory" Target="CLOUDCMD_ROOT" Default="false" Mode="" Description="set root directory" Type="Variable" Display="advanced" Required="true" Mask="false"/>
   <Config Name="Enable console" Target="CLOUDCMD_CONSOLE" Default="false" Mode="" Description="enable console" Type="Variable" Display="advanced" Required="true" Mask="false"/>
-  <Config Name="Enable terminal" Target="CLOUDCMD_TERMINAL" Default="false" Mode="" Description="enable terminal" Type="Variable" Display="advanced" Required="true" Mask="false"/>
-  <Config Name="Terminal path" Target="CLOUDCMD_TERMINAL_PATH" Default="gritty" Mode="" Description="set terminal path" Type="Variable" Display="advanced" Required="true" Mask="false"/>
+  <Config Name="Enable terminal" Target="cloudcmd_terminal" Default="false" Mode="" Description="enable terminal" Type="Variable" Display="advanced" Required="true" Mask="false"/>
+  <Config Name="Terminal path" Target="cloudcmd_terminal_path" Default="gritty" Mode="" Description="set terminal path" Type="Variable" Display="advanced" Required="true" Mask="false"/>
 </Container>
