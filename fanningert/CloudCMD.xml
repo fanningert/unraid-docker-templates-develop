@@ -85,9 +85,9 @@
   <Config Name="Root directory" Target="CLOUDCMD_ROOT" Default="/mnt/fs" Mode="" Description="set root directory" Type="Variable" Display="advanced" Required="true" Mask="false">/mnt/fs</Config>
   <Config Name="Set editor" Target="CLOUDCMD_EDITOR" Default="edward|dword" Mode="" Description="set editor" Type="Variable" Display="advanced" Required="true" Mask="false">edward</Config>
   <Config Name="Enable console" Target="CLOUDCMD_CONSOLE" Default="true|false" Mode="" Description="enable console" Type="Variable" Display="advanced" Required="true" Mask="false">false</Config>
-  <Config Name="Enable config dialog" Target="CLOUDCMD_CONFIG_DIALOG" Default="true|false" Mode="" Description="enable config dialog" Type="Variable" Display="advanced" Required="true" Mask="false">false</Config>
   <Config Name="Enable terminal" Target="cloudcmd_terminal" Default="true|false" Mode="" Description="enable terminal" Type="Variable" Display="advanced" Required="true" Mask="false">false</Config>
   <Config Name="Terminal path" Target="cloudcmd_terminal_path" Default="gritty" Mode="" Description="set terminal path" Type="Variable" Display="advanced" Required="true" Mask="false">gritty</Config>
+  <Config Name="Enable config dialog" Target="CLOUDCMD_CONFIG_DIALOG" Default="true|false" Mode="" Description="enable config dialog" Type="Variable" Display="advanced" Required="true" Mask="false">false</Config>
   <Config Name="Tab name" Target="CLOUDCMD_NAME" Default="" Mode="" Description="set tab name in web browser" Type="Variable" Display="advanced" Required="false" Mask="false"/>
 
 </Container>

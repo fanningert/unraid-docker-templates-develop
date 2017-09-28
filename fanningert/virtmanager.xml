@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>Virt-Manager</Name>
+  <Beta>True</Beta>
+  <Repository>fanningert/docker-virtmanager</Repository>
+  <Registry>https://registry.hub.docker.com/u/fanningert/docker-virtmanager/</Registry>
+  <Network>bridge</Network>
+  <Date>2017-09-28</Date>
+  <Privileged>false</Privileged>
+  <Changes>
+[center][font size=4]Virt-Manager Log[/font][/center]
+[font size=3]2017.09.28[/font]
+- Initial Release
+  </Changes>
+  <Support/>
+  <Overview>The virt-manager application is a desktop user interface for managing virtual machines through libvirt. It primarily targets KVM VMs, but also manages Xen and LXC (linux containers). It presents a summary view of running domains, their live performance &amp;amp; resource utilization statistics. Wizards enable the creation of new domains, and configuration &amp;amp; adjustment of a domain&#x2019;s resource allocation &amp;amp; virtual hardware. An embedded VNC and SPICE client viewer presents a full graphical console to the guest domain.</Overview>
+  <Category>Tools:</Category>
+  <WebUI>http://[IP]:[PORT:8080]</WebUI>
+  <TemplateURL/>
+  <Icon/>
+  <ExtraParams/>
+  <Description>The virt-manager application is a desktop user interface for managing virtual machines through libvirt. It primarily targets KVM VMs, but also manages Xen and LXC (linux containers). It presents a summary view of running domains, their live performance &amp;amp; resource utilization statistics. Wizards enable the creation of new domains, and configuration &amp;amp; adjustment of a domain&#x2019;s resource allocation &amp;amp; virtual hardware. An embedded VNC and SPICE client viewer presents a full graphical console to the guest domain.</Description>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>8100</HostPort>
+        <ContainerPort>8080</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/dev/urandom</HostDir>
+      <ContainerDir>/dev/urandom</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment>
+    <Variable>
+      <Value>1024</Value>
+      <Name>DISPLAY_WIDTH</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>768</Value>
+      <Name>DISPLAY_HEIGHT</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>America/Chicago</Value>
+      <Name>TZ</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>en_US.UTF-8</Value>
+      <Name>LANG</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>en_US.UTF-8</Value>
+      <Name>LANGUAGE</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
+  <Config Name="Display Width" Target="DISPLAY_WIDTH" Default="1024" Mode="" Description="Container Variable: DISPLAY_WIDTH" Type="Variable" Display="always" Required="true" Mask="false">1024</Config>
+  <Config Name="Display Height" Target="DISPLAY_HEIGHT" Default="768" Mode="" Description="Container Variable: DISPLAY_HEIGHT" Type="Variable" Display="always" Required="true" Mask="false">768</Config>
+  <Config Name="noVNC HTTP" Target="8080" Default="8080" Mode="tcp" Description="Container Port: 8080" Type="Port" Display="always" Required="true" Mask="false">8100</Config>
+  <Config Name="Host Path 1" Target="/dev/urandom" Default="/dev/urandom" Mode="rw" Description="Container Path: /dev/urandom" Type="Path" Display="advanced" Required="true" Mask="false">/dev/urandom</Config>
+  <Config Name="Timezone" Target="TZ" Default="America/Chicago" Mode="" Description="Container Variable: TZ" Type="Variable" Display="advanced" Required="true" Mask="false">America/Chicago</Config>
+  <Config Name="Language 1" Target="LANG" Default="en_US.UTF-8" Mode="" Description="Container Variable: LANG" Type="Variable" Display="advanced" Required="true" Mask="false">en_US.UTF-8</Config>
+  <Config Name="Language 2" Target="LANGUAGE" Default="en_US.UTF-8" Mode="" Description="Container Variable: LANGUAGE" Type="Variable" Display="advanced" Required="true" Mask="false">en_US.UTF-8</Config>
+</Container>

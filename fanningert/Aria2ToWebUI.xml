@@ -26,6 +26,12 @@ The aim for this project is to create the worlds best and hottest interface to i
   <ExtraParams/>
   <Description>
 The aim for this project is to create the worlds best and hottest interface to interact with aria2. aria2 is the worlds best file downloader, but sometimes the command line brings more power than necessary. The project was initially created as part of the GSOC scheme, however it has rapidly grown and changed with tremendous support and feedback from the aria2 community.
+[br/]
+[b]Instructions:[/b][br/]
+Set Port to the port you want to be able to access from. Defaults to 6880[br/]
+Set Mount Points for the downloads directory and the watch directory.[br/]
+[br/]
+After the first start you need to add your HOST, RPC-Port and SECRET code in the connection settings of the webUI (Settings -> Connection Settings).
 </Description>
   <Networking>
     <Mode>bridge</Mode>
