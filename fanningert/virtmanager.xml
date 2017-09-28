@@ -24,7 +24,7 @@
     <Mode>bridge</Mode>
     <Publish>
       <Port>
-        <HostPort>8100</HostPort>
+        <HostPort>8080</HostPort>
         <ContainerPort>8080</ContainerPort>
         <Protocol>tcp</Protocol>
       </Port>
@@ -66,7 +66,7 @@
   </Environment>
   <Config Name="Display Width" Target="DISPLAY_WIDTH" Default="1024" Mode="" Description="Container Variable: DISPLAY_WIDTH" Type="Variable" Display="always" Required="true" Mask="false">1024</Config>
   <Config Name="Display Height" Target="DISPLAY_HEIGHT" Default="768" Mode="" Description="Container Variable: DISPLAY_HEIGHT" Type="Variable" Display="always" Required="true" Mask="false">768</Config>
-  <Config Name="noVNC HTTP" Target="8080" Default="8080" Mode="tcp" Description="Container Port: 8080" Type="Port" Display="always" Required="true" Mask="false">8100</Config>
+  <Config Name="noVNC HTTP" Target="8080" Default="8080" Mode="tcp" Description="Container Port: 8080" Type="Port" Display="always" Required="true" Mask="false">8080</Config>
   <Config Name="Host Path 1" Target="/dev/urandom" Default="/dev/urandom" Mode="rw" Description="Container Path: /dev/urandom" Type="Path" Display="advanced" Required="true" Mask="false">/dev/urandom</Config>
   <Config Name="Timezone" Target="TZ" Default="America/Chicago" Mode="" Description="Container Variable: TZ" Type="Variable" Display="advanced" Required="true" Mask="false">America/Chicago</Config>
   <Config Name="Language 1" Target="LANG" Default="en_US.UTF-8" Mode="" Description="Container Variable: LANG" Type="Variable" Display="advanced" Required="true" Mask="false">en_US.UTF-8</Config>
