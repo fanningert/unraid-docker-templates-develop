@@ -6,22 +6,21 @@
   <Network>bridge</Network>
   <MyIP/>
   <Privileged>false</Privileged>
-  <Support>https://forums.lime-technology.com/topic/60258-support-cloud-commander/</Support>
+  <Support>https://forums.lime-technology.com/topic/61046-support-calibre-web/</Support>
   <Overview>Calibre Web is a web app providing a clean interface for browsing, reading and downloading eBooks using an &amp;lt;b&amp;gt;existing Calibre database&amp;lt;/b&amp;gt;.</Overview>
   <Category>MediaApp:Books MediaServer:Books</Category>
-  <WebUI>http://[IP]:[PORT:80]</WebUI>
+  <WebUI>http://[IP]:[PORT:8083]</WebUI>
   <TemplateURL/>
   <Icon>https://raw.githubusercontent.com/fanningert/unraid-docker-templates/master/fanningert/icons/calibreweb.png</Icon>
   <ExtraParams/>
   <PostArgs/>
-  <DateInstalled>1509269604</DateInstalled>
   <Description>Calibre Web is a web app providing a clean interface for browsing, reading and downloading eBooks using an &amp;lt;b&amp;gt;existing Calibre database&amp;lt;/b&amp;gt;.</Description>
   <Networking>
     <Mode>bridge</Mode>
     <Publish>
       <Port>
-        <HostPort>8083</HostPort>
-        <ContainerPort/>
+        <HostPort/>
+        <ContainerPort>8083</ContainerPort>
         <Protocol>tcp</Protocol>
       </Port>
     </Publish>
@@ -35,12 +34,12 @@
   </Data>
   <Environment>
     <Variable>
-      <Value/>
+      <Value>100</Value>
       <Name>PGID</Name>
       <Mode/>
     </Variable>
     <Variable>
-      <Value/>
+      <Value>99</Value>
       <Name>PUID</Name>
       <Mode/>
     </Variable>
@@ -55,10 +54,10 @@
       <Mode/>
     </Variable>
   </Environment>
-  <Config Name="WebFrontend" Target="" Default="8083" Mode="tcp" Description="Container Port: " Type="Port" Display="always" Required="true" Mask="false">8083</Config>
+  <Config Name="WebFrontend" Target="8083" Default="8083" Mode="tcp" Description="Container Port: " Type="Port" Display="always" Required="true" Mask="false">8083</Config>
   <Config Name="Calibre library path" Target="/books" Default="" Mode="rw" Description="Container Path: /books" Type="Path" Display="always" Required="true" Mask="false"/>
-  <Config Name="GroupID" Target="PGID" Default="" Mode="" Description="Container Variable: PGID" Type="Variable" Display="advanced" Required="true" Mask="false"/>
-  <Config Name="UserID" Target="PUID" Default="" Mode="" Description="Container Variable: PUID" Type="Variable" Display="advanced" Required="true" Mask="false"/>
+  <Config Name="GroupID" Target="PGID" Default="" Mode="" Description="Container Variable: PGID" Type="Variable" Display="advanced" Required="true" Mask="false">100</Config>
+  <Config Name="UserID" Target="PUID" Default="99" Mode="" Description="Container Variable: PUID" Type="Variable" Display="advanced" Required="true" Mask="false">99</Config>
   <Config Name="SET_CONTAINER_TIMEZONE" Target="SET_CONTAINER_TIMEZONE" Default="true|false" Mode="" Description="Container Variable: SET_CONTAINER_TIMEZONE" Type="Variable" Display="advanced" Required="true" Mask="false">true</Config>
   <Config Name="CONTAINER_TIMEZONE" Target="CONTAINER_TIMEZONE" Default="UTC" Mode="" Description="The possible container timezones can be found under the directory /usr/share/zoneinfo/.&#13;&#10;UTC, Europe/Berlin, Europe/Vienna&#13;&#10;, ..." Type="Variable" Display="always" Required="true" Mask="false">UTC</Config>
 </Container>
