@@ -54,7 +54,7 @@ After the first start you need to add your HOST, RPC-Port and SECRET code in the
   <Data>
     <Volume>
       <HostDir>/mnt/user/appdata/aria2-with-webui</HostDir>
-      <ContainerDir>/config</ContainerDir>
+      <ContainerDir>/conf</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
     <Volume>
@@ -131,7 +131,7 @@ After the first start you need to add your HOST, RPC-Port and SECRET code in the
     </Variable>
   </Environment>
   <Config Name="Aria2 - Secret" Target="aria2Secret" Default="YOUR_SECRET_CODE" Mode="" Description="Aria2 RPC Secret" Type="Variable" Display="always" Required="true" Mask="false"/>
-  <Config Name="Config Storage Path" Target="/config" Default="/mnt/user/appdata/aria2-with-webui" Mode="rw" Description="Container Path: /config" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/aria2-with-webui</Config>
+  <Config Name="Config Storage Path" Target="/conf" Default="/mnt/user/appdata/aria2-with-webui" Mode="rw" Description="Container Path: /conf" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/aria2-with-webui</Config>
   <Config Name="Download Storage Path" Target="/download" Default="" Mode="rw" Description="Container Path: /download" Type="Path" Display="always" Required="true" Mask="false"/>
   <Config Name="Finished Storage Path" Target="/finished" Default="" Mode="rw" Description="Container Path: /finished" Type="Path" Display="always" Required="true" Mask="false"/>
   <Config Name="Aria2 WebUI Port" Target="80" Default="6880" Mode="tcp" Description="Container Port: 80" Type="Port" Display="always" Required="true" Mask="false">6880</Config>
