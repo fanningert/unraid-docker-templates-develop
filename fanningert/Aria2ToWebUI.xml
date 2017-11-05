@@ -5,9 +5,12 @@
   <Registry>https://registry.hub.docker.com/u/fanningert/aria2-with-webui/</Registry>
   <Network>bridge</Network>
   <Privileged>false</Privileged>
-  <Date>2017-09-17</Date>
+  <Date>2017-11-05</Date>
   <Changes>
 [center][font size=4]Aria2WebUI Change Log[/font][/center]
+[font size=3]2017.11.05[/font]
+- Add some aria2 config parameter to the docker config of unRaid
+- IMPORTANT: Change key of SECRET to aria2Secret
 [font size=3]2017.09.17[/font]
 - Removed BETA flag
 [font size=3]2017.09.13[/font]
@@ -77,6 +80,26 @@ After the first start you need to add your HOST, RPC-Port and SECRET code in the
       <Mode/>
     </Variable>
     <Variable>
+      <Value>true</Value>
+      <Name>aria2Continue</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>10M</Value>
+      <Name>aria2MinSplitSize</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>5</Value>
+      <Name>aria2Split</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>10</Value>
+      <Name>aria2MaxConnectionPerServer</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
       <Value>1.0</Value>
       <Name>aria2SeedRatio</Name>
       <Mode/>
@@ -114,6 +137,10 @@ After the first start you need to add your HOST, RPC-Port and SECRET code in the
   <Config Name="Aria2 WebUI Port" Target="80" Default="6880" Mode="tcp" Description="Container Port: 80" Type="Port" Display="always" Required="true" Mask="false">6880</Config>
   <Config Name="Aria2 RPC" Target="6800" Default="6800" Mode="tcp" Description="Container Port: 6800" Type="Port" Display="always" Required="true" Mask="false">6800</Config>
   <Config Name="Aria2 - Max Concurrent Downloads" Target="aria2MaxConcurrentDownloads" Default="5" Mode="" Description="Set the maximum number of parallel downloads for every queue item." Type="Variable" Display="always" Required="true" Mask="false">5</Config>
+  <Config Name="Aria2 - Continue" Target="aria2Continue" Default="true|false" Mode="" Description="If the previous transfer is made by a browser or wget like sequential download manager, then use --continue option to continue the transfer." Type="Variable" Display="advanced" Required="true" Mask="false">true</Config>
+  <Config Name="Aria2 - Min Split Size" Target="aria2MinSplitSize" Default="10M" Mode="" Description="aria2 does not split less than 2*SIZE byte range. For example, let&#x2019;s consider downloading 20MiB file. If SIZE is 10M, aria2 can split file into 2 range [0-10MiB) and [10MiB-20MiB) and download it using 2 sources(if --split &amp;gt;= 2, of course). If SIZE is 15M, since 2*15M &amp;gt; 20MiB, aria2 does not split file and download it using 1 source. You can append K or M (1K = 1024, 1M = 1024K). Possible Values: 1M -1024M" Type="Variable" Display="advanced" Required="true" Mask="false">10M</Config>
+  <Config Name="Aria2 - Split" Target="aria2Split" Default="5" Mode="" Description="Download a file using N connections. If more than N URIs are given, first N URIs are used and remaining URIs are used for backup. If less than N URIs are given, those URIs are used more than once so that N connections total are made simultaneously. The number of connections to the same host is restricted by the --max-connection-per-server option. See also the --min-split-size option." Type="Variable" Display="advanced" Required="true" Mask="false">5</Config>
+  <Config Name="Aria2 - Max Connection Per Server" Target="aria2MaxConnectionPerServer" Default="10" Mode="" Description="The maximum number of connections to one server for each download. " Type="Variable" Display="advanced" Required="true" Mask="false">10</Config>
   <Config Name="Aria2 - Seed Ratio" Target="aria2SeedRatio" Default="1.0" Mode="" Description="pecify share ratio. Seed completed torrents until share ratio reaches RATIO. You are strongly encouraged to specify equals or more than 1.0 here. Specify 0.0 if you intend to do seeding regardless of share ratio. If --seed-time option is specified along with this option, seeding ends when at least one of the conditions is satisfied." Type="Variable" Display="advanced" Required="true" Mask="false">1.0</Config>
   <Config Name="Aria2 - Seed Time" Target="aria2SeedTime" Default="0" Mode="" Description="Specify seeding time in (fractional) minutes. Also see the --seed-ratio option." Type="Variable" Display="advanced" Required="true" Mask="false">0</Config>
   <Config Name="Aria2 - Disable IPv6" Target="aria2DisableIpv6" Default="true|false" Mode="" Description="This is useful if you have to use broken DNS and want to avoid terribly slow AAAA record lookup. " Type="Variable" Display="advanced" Required="true" Mask="false">true</Config>
