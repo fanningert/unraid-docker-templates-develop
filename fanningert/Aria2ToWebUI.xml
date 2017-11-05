@@ -71,6 +71,41 @@ After the first start you need to add your HOST, RPC-Port and SECRET code in the
       <Name>SECRET</Name>
       <Mode/>
     </Variable>
+    <Variable>
+      <Value>5</Value>
+      <Name>aria2-max-concurrent-downloads</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>1.0</Value>
+      <Name>aria2-seed-ratio</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>0</Value>
+      <Name>aria2-seed-time</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>true</Value>
+      <Name>aria2-disable-ipv6</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>false</Value>
+      <Name>aria2-force-save</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>0</Value>
+      <Name>aria2-max-download-limit</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>0</Value>
+      <Name>aria2-max-overall-download-limit</Name>
+      <Mode/>
+    </Variable>
   </Environment>
   <Config Name="Aria2 Secret" Target="SECRET" Default="YOUR_SECRET_CODE" Mode="" Description="Aria2 RPC Secret" Type="Variable" Display="always" Required="true" Mask="false"/>
   <Config Name="Config Storage Path" Target="/config" Default="/mnt/user/appdata/aria2-with-webui" Mode="rw" Description="Container Path: /config" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/aria2-with-webui</Config>
@@ -78,4 +113,11 @@ After the first start you need to add your HOST, RPC-Port and SECRET code in the
   <Config Name="Finished Storage Path" Target="/finished" Default="" Mode="rw" Description="Container Path: /finished" Type="Path" Display="always" Required="true" Mask="false"/>
   <Config Name="Aria2 WebUI Port" Target="80" Default="6880" Mode="tcp" Description="Container Port: 80" Type="Port" Display="always" Required="true" Mask="false">6880</Config>
   <Config Name="Aria2 RPC" Target="6800" Default="6800" Mode="tcp" Description="Container Port: 6800" Type="Port" Display="always" Required="true" Mask="false">6800</Config>
+  <Config Name="Aria2 - Max Concurrent Downloads" Target="aria2-max-concurrent-downloads" Default="5" Mode="" Description="Set the maximum number of parallel downloads for every queue item." Type="Variable" Display="always" Required="true" Mask="false">5</Config>
+  <Config Name="Aria2 - Seed Ratio" Target="aria2-seed-ratio" Default="1.0" Mode="" Description="pecify share ratio. Seed completed torrents until share ratio reaches RATIO. You are strongly encouraged to specify equals or more than 1.0 here. Specify 0.0 if you intend to do seeding regardless of share ratio. If --seed-time option is specified along with this option, seeding ends when at least one of the conditions is satisfied." Type="Variable" Display="advanced" Required="true" Mask="false">1.0</Config>
+  <Config Name="Aria2 - Seed Time" Target="aria2-seed-time" Default="0" Mode="" Description="Specify seeding time in (fractional) minutes. Also see the --seed-ratio option." Type="Variable" Display="advanced" Required="true" Mask="false">0</Config>
+  <Config Name="Aria2 - Disable IPv6" Target="aria2-disable-ipv6" Default="true|false" Mode="" Description="This is useful if you have to use broken DNS and want to avoid terribly slow AAAA record lookup. " Type="Variable" Display="advanced" Required="true" Mask="false">true</Config>
+  <Config Name="Aria2 - Force Save" Target="aria2-force-save" Default="true|false" Mode="" Description="Save download with --save-session option even if the download is completed or removed. This option also saves control file in that situations. This may be useful to save BitTorrent seeding which is recognized as completed state." Type="Variable" Display="advanced" Required="true" Mask="false">false</Config>
+  <Config Name="Aria2 - Max Download Limit" Target="aria2-max-download-limit" Default="0" Mode="" Description="Set max download speed per each download in bytes/sec. 0 means unrestricted. You can append K or M (1K = 1024, 1M = 1024K). To limit the overall download speed, use --max-overall-download-limit." Type="Variable" Display="advanced" Required="true" Mask="false">0</Config>
+  <Config Name="Aria2 - Max Overall Download Limit" Target="aria2-max-overall-download-limit" Default="0" Mode="" Description="Set max overall download speed in bytes/sec. 0 means unrestricted. You can append K or M (1K = 1024, 1M = 1024K). To limit the download speed per download, use --max-download-limit option." Type="Variable" Display="advanced" Required="true" Mask="false">0</Config>
 </Container>
