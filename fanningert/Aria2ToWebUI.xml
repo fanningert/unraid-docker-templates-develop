@@ -10,7 +10,8 @@
 [center][font size=4]Aria2WebUI Change Log[/font][/center]
 [font size=3]2017.11.05[/font]
 - Add some aria2 config parameter to the docker config of unRaid
-- IMPORTANT: Change key of SECRET to aria2Secret
+- IMPORTANT: Changed key of SECRET to aria2Secret
+- IMPORTANT: Changed config directory from /config to /conf
 [font size=3]2017.09.17[/font]
 - Removed BETA flag
 [font size=3]2017.09.13[/font]
@@ -80,6 +81,26 @@ After the first start you need to add your HOST, RPC-Port and SECRET code in the
       <Mode/>
     </Variable>
     <Variable>
+      <Value>false</Value>
+      <Name>aria2BtRequireCrypto</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>plain</Value>
+      <Name>aria2BtMinCryptoLevel</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>false</Value>
+      <Name>aria2BtSaveMetadata</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>false</Value>
+      <Name>aria2BtLoadSavedMetadata</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
       <Value>true</Value>
       <Name>aria2Continue</Name>
       <Mode/>
@@ -137,6 +158,10 @@ After the first start you need to add your HOST, RPC-Port and SECRET code in the
   <Config Name="Aria2 WebUI Port" Target="80" Default="6880" Mode="tcp" Description="Container Port: 80" Type="Port" Display="always" Required="true" Mask="false">6880</Config>
   <Config Name="Aria2 RPC" Target="6800" Default="6800" Mode="tcp" Description="Container Port: 6800" Type="Port" Display="always" Required="true" Mask="false">6800</Config>
   <Config Name="Aria2 - Max Concurrent Downloads" Target="aria2MaxConcurrentDownloads" Default="5" Mode="" Description="Set the maximum number of parallel downloads for every queue item." Type="Variable" Display="always" Required="true" Mask="false">5</Config>
+  <Config Name="Aria2 - BT Require Crypto" Target="aria2BtRequireCrypto" Default="true|false" Mode="" Description="If true is given, aria2 doesn&#x2019;t accept and establish connection with legacy BitTorrent handshake(\19BitTorrent protocol). Thus aria2 always uses Obfuscation handshake." Type="Variable" Display="advanced" Required="true" Mask="false">false</Config>
+  <Config Name="Aria2 - BT Min Crypto Level" Target="aria2BtMinCryptoLevel" Default="plain|arc4" Mode="" Description="Set minimum level of encryption method. If several encryption methods are provided by a peer, aria2 chooses the lowest one which satisfies the given level." Type="Variable" Display="advanced" Required="true" Mask="false">plain</Config>
+  <Config Name="Aria2 BT Save Metadata" Target="aria2BtSaveMetadata" Default="true|false" Mode="" Description="Save meta data as &#x201C;.torrent&#x201D; file. This option has effect only when BitTorrent Magnet URI is used. The file name is hex encoded info hash with suffix &#x201C;.torrent&#x201D;. The directory to be saved is the same directory where download file is saved. If the same file already exists, meta data is not saved. See also --bt-metadata-only option." Type="Variable" Display="advanced" Required="true" Mask="false">false</Config>
+  <Config Name="Aria2 - BT Load Saved Metadata" Target="aria2BtLoadSavedMetadata" Default="true|false" Mode="" Description="Before getting torrent metadata from DHT when downloading with magnet link, first try to read file saved by --bt-save-metadata option. If it is successful, then skip downloading metadata from DHT. " Type="Variable" Display="advanced" Required="true" Mask="false">false</Config>
   <Config Name="Aria2 - Continue" Target="aria2Continue" Default="true|false" Mode="" Description="If the previous transfer is made by a browser or wget like sequential download manager, then use --continue option to continue the transfer." Type="Variable" Display="advanced" Required="true" Mask="false">true</Config>
   <Config Name="Aria2 - Min Split Size" Target="aria2MinSplitSize" Default="10M" Mode="" Description="aria2 does not split less than 2*SIZE byte range. For example, let&#x2019;s consider downloading 20MiB file. If SIZE is 10M, aria2 can split file into 2 range [0-10MiB) and [10MiB-20MiB) and download it using 2 sources(if --split &amp;gt;= 2, of course). If SIZE is 15M, since 2*15M &amp;gt; 20MiB, aria2 does not split file and download it using 1 source. You can append K or M (1K = 1024, 1M = 1024K). Possible Values: 1M -1024M" Type="Variable" Display="advanced" Required="true" Mask="false">10M</Config>
   <Config Name="Aria2 - Split" Target="aria2Split" Default="5" Mode="" Description="Download a file using N connections. If more than N URIs are given, first N URIs are used and remaining URIs are used for backup. If less than N URIs are given, those URIs are used more than once so that N connections total are made simultaneously. The number of connections to the same host is restricted by the --max-connection-per-server option. See also the --min-split-size option." Type="Variable" Display="advanced" Required="true" Mask="false">5</Config>
