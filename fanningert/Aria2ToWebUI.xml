@@ -5,9 +5,12 @@
   <Registry>https://registry.hub.docker.com/u/fanningert/aria2-with-webui/</Registry>
   <Network>bridge</Network>
   <Privileged>false</Privileged>
-  <Date>2017-11-05</Date>
+  <Date>2017-11-06</Date>
   <Changes>
 [center][font size=4]Aria2WebUI Change Log[/font][/center]
+[font size=3]2017.11.06[/font]
+- Add DHT Enable flag
+- Add DHT and BitTorrent Ports and variables. You need to change the variable and the port setting. The variable update the aria2.conf and the port setting is for the docker mapping.
 [font size=3]2017.11.05[/font]
 - Add some aria2 config parameter to the docker config of unRaid
 - IMPORTANT: Changed key of SECRET to aria2Secret
@@ -50,6 +53,16 @@ After the first start you need to add your HOST, RPC-Port and SECRET code in the
         <ContainerPort>6800</ContainerPort>
         <Protocol>tcp</Protocol>
       </Port>
+      <Port>
+        <HostPort>6889</HostPort>
+        <ContainerPort>6889</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+      <Port>
+        <HostPort>6881</HostPort>
+        <ContainerPort>6881</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
     </Publish>
   </Networking>
   <Data>
@@ -78,6 +91,21 @@ After the first start you need to add your HOST, RPC-Port and SECRET code in the
     <Variable>
       <Value>5</Value>
       <Name>aria2MaxConcurrentDownloads</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>6889</Value>
+      <Name>aria2ListenPort</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>true</Value>
+      <Name>aria2EnableDht</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>6881</Value>
+      <Name>aria2DhtListenPort</Name>
       <Mode/>
     </Variable>
     <Variable>
@@ -163,6 +191,11 @@ After the first start you need to add your HOST, RPC-Port and SECRET code in the
   <Config Name="Aria2 WebUI Port" Target="80" Default="6880" Mode="tcp" Description="Container Port: 80" Type="Port" Display="always" Required="true" Mask="false">6880</Config>
   <Config Name="Aria2 RPC" Target="6800" Default="6800" Mode="tcp" Description="Container Port: 6800" Type="Port" Display="always" Required="true" Mask="false">6800</Config>
   <Config Name="Aria2 - Max Concurrent Downloads" Target="aria2MaxConcurrentDownloads" Default="5" Mode="" Description="Set the maximum number of parallel downloads for every queue item." Type="Variable" Display="always" Required="true" Mask="false">5</Config>
+  <Config Name="Aria2 - Listen Port (aria2.conf)" Target="aria2ListenPort" Default="6889" Mode="" Description="Set TCP port number for BitTorrent downloads. Multiple ports can be specified by using ,, for example: 6881,6885. You can also use - to specify a range: 6881-6999. , and - can be used together: 6881-6889,6999." Type="Variable" Display="advanced" Required="true" Mask="false">6889</Config>
+  <Config Name="Aria2 - Listen Port" Target="6889" Default="6889" Mode="tcp" Description="Set TCP port number for BitTorrent downloads. Multiple ports can be specified by using ,, for example: 6881,6885. You can also use - to specify a range: 6881-6999. , and - can be used together: 6881-6889,6999. You also need to change the Variable " Type="Port" Display="always" Required="true" Mask="false">6889</Config>
+  <Config Name="Aria2 - Enable DHT" Target="aria2EnableDht" Default="true|false" Mode="" Description="Enable IPv4 DHT functionality. It also enables UDP tracker support. If a private flag is set in a torrent, aria2 doesn&#x2019;t use DHT for that download even if true is given." Type="Variable" Display="advanced" Required="true" Mask="false">true</Config>
+  <Config Name="Aria2 - DHT Listen Port (aria2.conf)" Target="aria2DhtListenPort" Default="6881" Mode="" Description="Set UDP listening port used by DHT(IPv4, IPv6) and UDP tracker. Multiple ports can be specified by using ,, for example: 6881,6885. You can also use - to specify a range: 6881-6999. , and - can be used together." Type="Variable" Display="advanced" Required="true" Mask="false">6881</Config>
+  <Config Name="Aria2 - DHT Listen Port" Target="6881" Default="6881" Mode="tcp" Description="Set UDP listening port used by DHT(IPv4, IPv6) and UDP tracker. Multiple ports can be specified by using ,, for example: 6881,6885. You can also use - to specify a range: 6881-6999. , and - can be used together. You also need to change the Variable " Type="Port" Display="always" Required="false" Mask="false">6881</Config>
   <Config Name="Aria2 - Save Session Interval" Target="aria2SaveSessionInterval" Default="10" Mode="" Description="Save error/unfinished downloads to a file specified by --save-session option every SEC seconds. If 0 is given, file will be saved only when aria2 exits." Type="Variable" Display="advanced" Required="true" Mask="false">10</Config>
   <Config Name="Aria2 - BT Require Crypto" Target="aria2BtRequireCrypto" Default="true|false" Mode="" Description="If true is given, aria2 doesn&#x2019;t accept and establish connection with legacy BitTorrent handshake(\19BitTorrent protocol). Thus aria2 always uses Obfuscation handshake." Type="Variable" Display="advanced" Required="true" Mask="false">false</Config>
   <Config Name="Aria2 - BT Min Crypto Level" Target="aria2BtMinCryptoLevel" Default="plain|arc4" Mode="" Description="Set minimum level of encryption method. If several encryption methods are provided by a peer, aria2 chooses the lowest one which satisfies the given level." Type="Variable" Display="advanced" Required="true" Mask="false">plain</Config>
