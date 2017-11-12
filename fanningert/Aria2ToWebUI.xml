@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <Container version="2">
   <Name>aria2webui</Name>
-  <Repository>fanningert/aria2-with-webui</Repository>
+  <Repository>fanningert/aria2-with-webui:develop</Repository>
   <Registry>https://registry.hub.docker.com/u/fanningert/aria2-with-webui/</Registry>
   <Network>bridge</Network>
   <Privileged>false</Privileged>
