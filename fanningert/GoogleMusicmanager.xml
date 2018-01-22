@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>google-musicmanager</Name>
+  <Repository>jaymoulin/google-musicmanager</Repository>
+  <Registry>https://hub.docker.com/r/jaymoulin/google-musicmanager/~/dockerfile/</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Privileged>false</Privileged>
+  <Support>https://hub.docker.com/r/jaymoulin/google-musicmanager/</Support>
+  <Overview>Google Music Manager - Docker Image (Multiarch)&#xD;
+&#xD;
+This image allows you to download and upload your Google Music Library to/from a selected folder. This image is based on Google MusicManager (https://github.com/jaymoulin/google-music-manager)</Overview>
+  <Category>Downloaders: MediaApp:Music Status:Stable</Category>
+  <WebUI/>
+  <TemplateURL/>
+  <Icon>https://raw.githubusercontent.com/fanningert/unraid-docker-templates/master/fanningert/icons/googlemusicmanager.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <DateInstalled>1516646201</DateInstalled>
+  <Description>Google Music Manager - Docker Image (Multiarch)&#xD;
+&#xD;
+This image allows you to download and upload your Google Music Library to/from a selected folder. This image is based on Google MusicManager (https://github.com/jaymoulin/google-music-manager)</Description>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish/>
+  </Networking>
+  <Data/>
+  <Environment>
+    <Variable>
+      <Value>true</Value>
+      <Name>REMOVE</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>false</Value>
+      <Name>UPLOADER_ID</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
+  <Config Name="REMOVE" Target="REMOVE" Default="false|true" Mode="" Description="Remove file on successful upload (boolean, (default: true)) - pass to false if you want to keep files" Type="Variable" Display="always" Required="true" Mask="false">true</Config>
+  <Config Name="UPLOADER_ID" Target="UPLOADER_ID" Default="false" Mode="" Description="Identity of your uploader, must be your MAC address in uppercase (default: false, which means your actual MAC address) - Change this value only if you know what you are doing and had MAX_PER_MACHINE_USERS_EXCEEDED error" Type="Variable" Display="always" Required="true" Mask="false">false</Config>
+</Container>
