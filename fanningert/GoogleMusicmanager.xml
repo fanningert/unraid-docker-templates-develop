@@ -16,7 +16,7 @@ This image allows you to download and upload your Google Music Library to/from a
   <Icon>https://raw.githubusercontent.com/fanningert/unraid-docker-templates/master/fanningert/icons/googlemusicmanager.png</Icon>
   <ExtraParams/>
   <PostArgs/>
-  <DateInstalled>1516646201</DateInstalled>
+  <DateInstalled>1516647402</DateInstalled>
   <Description>Google Music Manager - Docker Image (Multiarch)&#xD;
 &#xD;
 This image allows you to download and upload your Google Music Library to/from a selected folder. This image is based on Google MusicManager (https://github.com/jaymoulin/google-music-manager)</Description>
@@ -24,7 +24,18 @@ This image allows you to download and upload your Google Music Library to/from a
     <Mode>bridge</Mode>
     <Publish/>
   </Networking>
-  <Data/>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/googlemusicmanager/upload</HostDir>
+      <ContainerDir>/media/library/upload</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/appdata/googlemusicmanager/download</HostDir>
+      <ContainerDir>/media/library/download</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
   <Environment>
     <Variable>
       <Value>true</Value>
@@ -39,4 +50,6 @@ This image allows you to download and upload your Google Music Library to/from a
   </Environment>
   <Config Name="REMOVE" Target="REMOVE" Default="false|true" Mode="" Description="Remove file on successful upload (boolean, (default: true)) - pass to false if you want to keep files" Type="Variable" Display="always" Required="true" Mask="false">true</Config>
   <Config Name="UPLOADER_ID" Target="UPLOADER_ID" Default="false" Mode="" Description="Identity of your uploader, must be your MAC address in uppercase (default: false, which means your actual MAC address) - Change this value only if you know what you are doing and had MAX_PER_MACHINE_USERS_EXCEEDED error" Type="Variable" Display="always" Required="true" Mask="false">false</Config>
+  <Config Name="Upload-Directory" Target="/media/library/upload" Default="/mnt/user/appdata/googlemusicmanager/upload" Mode="rw" Description="Container Path: /media/library/upload" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/googlemusicmanager/upload</Config>
+  <Config Name="Download-Directory" Target="/media/library/download" Default="/mnt/user/appdata/googlemusicmanager/download" Mode="rw" Description="Container Path: /media/library/download" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/googlemusicmanager/download</Config>
 </Container>
