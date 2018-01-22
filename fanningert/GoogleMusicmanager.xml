@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <Container version="2">
   <Name>google-musicmanager</Name>
-  <Repository>jaymoulin/google-musicmanager</Repository>
+  <Repository>jaymoulin/google-musicmanager:0.6.1-amd64</Repository>
   <Registry>https://hub.docker.com/r/jaymoulin/google-musicmanager/~/dockerfile/</Registry>
   <Network>bridge</Network>
   <MyIP/>
