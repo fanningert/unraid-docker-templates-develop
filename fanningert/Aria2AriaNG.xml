@@ -68,6 +68,11 @@ The aim for this project is to create the worlds best and hottest interface to i
       <Mode/>
     </Variable>
     <Variable>
+      <Value>warn</Value>
+      <Name>aria2LogLevel</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
       <Value>5</Value>
       <Name>aria2MaxConcurrentDownloads</Name>
       <Mode/>
@@ -180,6 +185,7 @@ The aim for this project is to create the worlds best and hottest interface to i
   <Config Name="Aria2 - Max Concurrent Downloads" Target="aria2MaxConcurrentDownloads" Default="5" Mode="" Description="Set the maximum number of parallel downloads for every queue item." Type="Variable" Display="always" Required="true" Mask="false">5</Config>
   <Config Name="Aria2 - Listen Port" Target="6889" Default="6889" Mode="tcp" Description="Set TCP port number for BitTorrent downloads. Multiple ports can be specified by using ,, for example: 6881,6885. You can also use - to specify a range: 6881-6999. , and - can be used together: 6881-6889,6999. You also need to change the Variable " Type="Port" Display="always" Required="true" Mask="false">6889</Config>
   <Config Name="Aria2 - DHT Listen Port" Target="6881" Default="6881" Mode="tcp" Description="Set UDP listening port used by DHT(IPv4, IPv6) and UDP tracker. Multiple ports can be specified by using ,, for example: 6881,6885. You can also use - to specify a range: 6881-6999. , and - can be used together. You also need to change the Variable " Type="Port" Display="always" Required="false" Mask="false">6881</Config>
+  <Config Name="Aria2 - LogLevel" Target="aria2LogLevel" Default="notice|debug|info|warn|error" Mode="" Description="Set log level to output." Type="Variable" Display="advanced-hide" Required="true" Mask="false">warn</Config>
   <Config Name="User ID" Target="PUID" Default="99" Mode="" Description="ID of the user the application runs as." Type="Variable" Display="advanced-hide" Required="true" Mask="false">99</Config>
   <Config Name="Group ID" Target="PGID" Default="100" Mode="" Description="ID of the group the application runs as." Type="Variable" Display="advanced-hide" Required="true" Mask="false">100</Config>
   <Config Name="Config Storage Path" Target="/conf" Default="/mnt/user/appdata/aria2-with-ariang" Mode="rw" Description="Container Path: /conf" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/aria2-with-ariang/</Config>

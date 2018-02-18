@@ -76,6 +76,11 @@
       <Mode/>
     </Variable>
     <Variable>
+      <Value>warn</Value>
+      <Name>aria2LogLevel</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
       <Value>99</Value>
       <Name>PUID</Name>
       <Mode/>
@@ -179,6 +184,7 @@
   <Config Name="Aria2 - Listen Port (aria2.conf)" Target="aria2ListenPort" Default="6889" Mode="" Description="Set TCP port number for BitTorrent downloads. Multiple ports can be specified by using ,, for example: 6881,6885. You can also use - to specify a range: 6881-6999. , and - can be used together: 6881-6889,6999." Type="Variable" Display="always" Required="true" Mask="false">6889</Config>
   <Config Name="Aria2 - DHT Listen Port (aria2.conf)" Target="aria2DhtListenPort" Default="6881" Mode="" Description="Set UDP listening port used by DHT(IPv4, IPv6) and UDP tracker. Multiple ports can be specified by using ,, for example: 6881,6885. You can also use - to specify a range: 6881-6999. , and - can be used together." Type="Variable" Display="always" Required="true" Mask="false">6881</Config>
   <Config Name="Aria2 - Secret" Target="aria2Secret" Default="YOUR_SECRET_CODE" Mode="" Description="Aria2 RPC Secret" Type="Variable" Display="always" Required="true" Mask="false">YOUR_SECRET_CODE</Config>
+  <Config Name="Aria2 - LogLevel" Target="aria2LogLevel" Default="notice|debug|info|warn|error" Mode="" Description="Set log level to output." Type="Variable" Display="advanced-hide" Required="true" Mask="false">warn</Config>
   <Config Name="User ID" Target="PUID" Default="99" Mode="" Description="ID of the user the application runs as." Type="Variable" Display="advanced-hide" Required="true" Mask="false">99</Config>
   <Config Name="Group ID" Target="PGID" Default="100" Mode="" Description="ID of the group the application runs as." Type="Variable" Display="advanced-hide" Required="true" Mask="false">100</Config>
   <Config Name="Aria2 - LogLevel" Target="aria2LogLevel" Default="debug|info|notice|warn|error" Mode="" Description="Set log level to output. " Type="Variable" Display="advanced" Required="true" Mask="false">notice</Config>
