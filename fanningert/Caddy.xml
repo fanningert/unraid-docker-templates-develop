@@ -10,7 +10,7 @@
   <Project>https://caddyserver.com</Project>
   <Overview>Simple Caddy server docker container</Overview>
   <Category>Network:Web Status:Stable</Category>
-  <WebUI>http://[IP]:[PORT:80]</WebUI>
+  <WebUI>http://[IP]:[PORT:9080]</WebUI>
   <TemplateURL/>
   <Icon>https://raw.githubusercontent.com/fanningert/unraid-docker-templates/master/fanningert/icons/caddy.png</Icon>
   <ExtraParams/>
@@ -60,6 +60,11 @@
       <Name>PGID</Name>
       <Mode/>
     </Variable>
+    <Variable>
+      <Value>/config/cert</Value>
+      <Name>CADDYPATH</Name>
+      <Mode/>
+    </Variable>
   </Environment>
   <Config Name="HTTP Port" Target="9080" Default="9080" Mode="tcp" Description="Container Port: 9080" Type="Port" Display="always" Required="true" Mask="false">9080</Config>
   <Config Name="HTTPS Port" Target="9443" Default="9443" Mode="tcp" Description="Container Port: 9443" Type="Port" Display="always" Required="true" Mask="false">9443</Config>
@@ -67,4 +72,5 @@
   <Config Name="User ID" Target="PUID" Default="99" Mode="" Description="ID of the user the application runs as." Type="Variable" Display="advanced-hide" Required="true" Mask="false">99</Config>
   <Config Name="Group ID" Target="PGID" Default="100" Mode="" Description="ID of the group the application runs as." Type="Variable" Display="advanced-hide" Required="true" Mask="false">100</Config>
   <Config Name="Config Storage Path" Target="/config" Default="/mnt/user/appdata/caddy" Mode="rw" Description="Container Path: /config" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/caddy</Config>
+  <Config Name="Caddy Certification Path" Target="CADDYPATH" Default="/config/cert" Mode="" Description="Container Variable: CADDYPATH" Type="Variable" Display="advanced-hide" Required="true" Mask="false">/config/cert</Config>
 </Container>
